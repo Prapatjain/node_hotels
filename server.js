@@ -1,7 +1,7 @@
 const express=require('express');
 const app=express();
-const port=3000;
-
+// const port=3000;
+require('dotenv').config();
 const db=require('./db');
 
 const menuItem=require("./models/menuItem");
@@ -44,6 +44,9 @@ const menuItemRoutes=require("./routes/menuItemRoutes");
 app.use("/person",personRoutes);
 app.use("/menu",menuItemRoutes);
 
-app.listen(port,(req,res)=>{
-    console.log(`server is running on ${port}`);
+
+const PORT=process.env.PORT||3000;
+
+app.listen(PORT,(req,res)=>{
+    console.log(`server is running on ${PORT}`);
 })

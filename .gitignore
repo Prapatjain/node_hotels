@@ -1,3 +1,6 @@
     # ignore node modules directory
+
     node_modules/
+    .env
+
     # git rm -r --cached node_modules     .. to remove file from git 
